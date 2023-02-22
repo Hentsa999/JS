@@ -1,21 +1,19 @@
-let foo = 42
-let newVar = "Something"
-const myConst = 42
+let myFavoriteGame = "Witcher 3"
+let myconsole = "Xbox one"
+let newVar = "Peanut Butter"
+const myConst = myFavoriteGame
 
-console.log("Foo is 42 which is typeof ", (typeof foo))
+let myVar = null
+console.log("myVar is typeof ", (typeof myVar))
 
-foo = "bar"
-console.log("Foo is bar which is typeof", (typeof foo))
-
-foo = true
-console.log("Foo is true which is typeof", (typeof foo))
-
-foo = 42
-const result = foo + '1'
-console.log("result is 42 + 1 is typeof - ", (typeof result))
+console.log("myFavoriteGame is typeof ", (typeof myFavoriteGame))
+console.log("myFavoriteGame is value ", {myFavoriteGame})
+console.log("myconsole is typeof ", (typeof myconsole))
+console.log("myconsole is value ", (myconsole))
 
 if (true){
-    const myConst = 42
-    console.log(myConst)
+    const myConst = myFavoriteGame
+    console.log(myFavoriteGame)
 }
+
 
