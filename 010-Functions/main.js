@@ -1,9 +1,19 @@
-function  doMath (a,b,c,d) { 
-    let result = a+b+c+d
+
+ function  doMath (a, b) { 
+    let result = a * b
     return result
-    // This is the amount of reps I hit for body dips
+    //console.log(`this is the result ${a * b}`)
+     //console.log(`this is the result ${a + b}`)
+    //console.log(`this is the result ${a - b}`)
+   // console.log(`this is the result ${a / b}`)
 }
 
+ doMoreMath = (a, b) => a * b
  
-const result = doMath(12,10,8,5 )
+
+ console.log (doMoreMath(20, 30))
+
+const result = doMath(10, 4)
 console.log(`this result was returned from the function ${result}`)
+
+
