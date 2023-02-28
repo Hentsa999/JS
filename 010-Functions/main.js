@@ -11,7 +11,7 @@ console.log(`this result was returned from the function ${result}`)
 doMoreMath = (a,b) => a*b
 // rep range for bench press
 console.log(doMoreMath(4,10))
-
+// so far the class is going good although it is challenging, I want to make sure I do my best!
 
 
 
