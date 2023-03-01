@@ -20,7 +20,13 @@ const count = gastypes.push("eletric");
 console.log(count);
 console.log(gastypes);
 
-updateDOM(mileage(300, 10, 5.4));
-updateDOM(trackMPGCost(320, 12, 5));
+const calculateAvg = () => {
+  const avgMPG = (myArr[0] + myArr[2]) / 2;
+  updateDOM("Average Miles per gallon is ${avgMPG}");
+};
+
+trackMPGCost(300, 10, 5.4);
+trackMPGCost(320, 12, 5);
 updateDOM(myArr);
-updateDOM(gastypes);
+//updateDOM(gastypes);
+calculateAvg();

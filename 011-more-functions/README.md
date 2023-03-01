@@ -6,3 +6,7 @@ Using devtools has showed me quite a lot I didnt know you can do with google chr
 # My thoughts on Array`s!
 
 My understanding so far on Array`s are confusing but also very intresting on how they work and different types of methods.
+
+# Heads up
+
+I tried to see what was wrong before clicking on the videos but only noticed the DOM issue
