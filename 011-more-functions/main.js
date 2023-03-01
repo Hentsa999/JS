@@ -20,13 +20,19 @@ const count = gastypes.push("eletric");
 console.log(count);
 console.log(gastypes);
 
-const calculateAvg = () => {
-  const avgMPG = (myArr[0] + myArr[2]) / 2;
-  updateDOM("Average Miles per gallon is ${avgMPG}");
+const calculateMPGAvg = () => {
+  let totalMPG = 0;
+  for (let i = 0; i < myMPG.length; i++) {
+    totalMPG = totalMPG + myMPG[i];
+  }
+  let avgMPG = totalMPG / myMPG.length;
+  updateDOM("Average MPG is ${avgMPG}");
 };
-
+// calculate average we need to determine total of occurances and divide
 trackMPGCost(300, 10, 5.4);
-trackMPGCost(320, 12, 5);
-updateDOM(myArr);
-//updateDOM(gastypes);
+trackMPGCost(220, 12, 5);
+trackMPGCost(500, 25, 10);
+trackMPGCost(120, 10, 3);
+trackMPGCost(310, 14, 6);
+trackMPGCost(330, 15, 7);
 calculateAvg();
