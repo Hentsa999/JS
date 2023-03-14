@@ -1,4 +1,8 @@
+const FORM = document.getElementById("form-input");
 const myArr = [];
+
+const MY_MPG = [];
+const MY_TRIP_COST = [];
 
 const updateDOM = (input) => {
   const divEl = document.querySelector("#output");
@@ -31,10 +35,14 @@ const calculateAvg = () => {
   updateDOM("Average Trip is ${avgTripCost}");
 };
 
-trackMPGandCost(360, 15, 5.4);
-trackMPGandCost(320, 12, 5);
-trackMPGandCost(150, 10, 3);
-trackMPGandCost(550, 20, 7.1);
-trackMPGandCost(433, 14, 6);
-trackMPGandCost(210, 11, 4.1);
-calculateAvg();
+FORM.addEventListener("submit", (e) => {
+  console.log[e];
+});
+
+//trackMPGandCost(360, 15, 5.4);
+//trackMPGandCost(320, 12, 5);
+//trackMPGandCost(150, 10, 3);
+//trackMPGandCost(550, 20, 7.1);
+//trackMPGandCost(433, 14, 6);
+//trackMPGandCost(210, 11, 4.1);
+//calculateAvg();
