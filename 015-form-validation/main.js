@@ -40,5 +40,13 @@ FORM.addEventListener("submit", (e) => {
   const miles = parseInt(e.target.miles.value);
   const gallons = parseInt(e.target.gallons.value);
   const price = parseInt(e.target.price.value);
-  trackMPGandCost(miles, gallons, price);
+  if (miles === 0) {
+    errMsg.push("Make sure your input value greater than 011, Try Again");
+  }
+
+  if (errMsg.length > 0) {
+    Error.textContent = errMsg;
+  } else {
+    trackMPGandCost(miles, gallons, price);
+  }
 });
