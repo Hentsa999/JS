@@ -13,9 +13,9 @@ const myObj = {
     Os: "android",
   },
   myGreeting: function (person) {
-    return "What is Up ${person}";
+    return "${this.name} who loves to ${this.hobbies[0]} says What is Up ${person}";
   },
 };
 
-const gretting = myObj.myGreeting("Chris");
+const greeting = myObj.myGreeting("Chris");
 console.log(greeting);
