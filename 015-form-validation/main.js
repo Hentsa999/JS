@@ -37,23 +37,24 @@ const calculateAvg = () => {
 
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
+  const errMsg = [];
   const miles = parseInt(e.target.miles.value);
   const gallons = parseInt(e.target.gallons.value);
   const price = parseInt(e.target.price.value);
   if (miles === 0 || gallons === 0 || price === 0) {
     errMsg.push("Make sure your input value greater than 011, Try Again");
-  } else {
-    result = miles > 0 || gallons > 0 || price > 0;
-    return result;
-    let TripCost = miles + gallons + price;
-    console.log(avgTripCost);
   }
-  if (price > 1000)
+  if (price > 1000) {
     errMsg.push("really? I think this is in error... try again");
+  }
 
   if (errMsg.length > 0) {
     ERR.textContent = errMsg;
   } else {
+    ERR.textContent = "";
+    AVG_OUTPUT.textContent = "";
     trackMPGandCost(miles, gallons, price);
+    calculateAvg();
   }
+  FORM.reset();
 });
