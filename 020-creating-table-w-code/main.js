@@ -1,5 +1,7 @@
 const FORM = document.getElementById("form-input");
 const myArr = [];
+const AVG_OUTPUT = document.getElementById("output-avg");
+const TBL_OUTPUT = document.getElementById("table-out");
 
 const MY_MPG = [];
 const MY_TRIP_COST = [];
@@ -56,23 +58,39 @@ if (errMsg.length > 0) {
   return true;
 }
 
+function renderTable() {
+  const tbl = document.createElement("table");
+  const heading =
+    ("Miles Driven",
+    "Gallons Used:",
+    "Price Paid:",
+    "Trip MPG",
+    "Trip Cost",
+    "Edit/Delete");
+  const tr = document.createElement("tr");
+  heading.forEach(function (heading) {
+    console.log(heading);
+    let th = document.createElement("th");
+    th.textContent = heading;
+    tr.appendChild(th);
+  });
+  console.log(tr);
+  tbl.appendChild(tr);
+  TBL_OUTPUT.appendChild(tbl);
+}
+
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
   const miles = parseInt(e.target.miles.value);
   const gallons = parseInt(e.target.gallons.value);
   const price = parseInt(e.target.price.value);
-
   const isValid = isFormValid(miles, gallons, price);
   if (isValid) {
-    //const newDataObj = {
-    // miles: miles,
-    // gallons: gallons,
-    //  price: price,
-    // };
-
     ERR.textContent = "";
     AVG_OUTPUT.textContent = "";
-    const updatedDataObj = trackMPGandCost(miles, gallons, price);
+    const DataObj = trackMPGandCost(miles, gallons, price);
+    MY_DATA.push(dataObj);
+    renderTable();
     calculateAvg();
   }
   FORM.reset();
