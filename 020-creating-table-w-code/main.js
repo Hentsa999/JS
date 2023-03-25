@@ -89,6 +89,7 @@ function renderTable() {
   })
 }
 
+
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
   const miles = parseInt(e.target.miles.value);
