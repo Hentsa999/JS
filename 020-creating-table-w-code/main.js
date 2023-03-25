@@ -77,6 +77,16 @@ function renderTable() {
   console.log(tr);
   tbl.appendChild(tr);
   TBL_OUTPUT.appendChild(tbl);
+  MY_DATA.forEach(function(obj){
+   const tr = document.createElement('tr')
+   for(key in obj){
+    let td = document.createElement('td')
+    td.textContent() = obj[key]
+    console.log(td)
+    tr.appendChild(td)
+   }
+   tbl.appendChild(tr)
+  })
 }
 
 FORM.addEventListener("submit", (e) => {
