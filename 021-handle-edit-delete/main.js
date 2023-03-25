@@ -100,7 +100,7 @@ function renderTable() {
    const delBtn = document.createElement('button');
    delBtn.textContent = 'delete';
    editBtn.addEventListener('click', function(e){
-    console.log(e)
+   
 
    })
    td.appendChild(editBtn);
