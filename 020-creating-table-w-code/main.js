@@ -23,16 +23,16 @@ const trackMPGandCost = (miles, gallons, price = 3.79) => {
   };
   return obj;
 
-  //MY_MPG.push(MPG);
-  //MY_TRIP_COST.push(tripCost);
+  MY_MPG.push(MPG);
+  MY_TRIP_COST.push(tripCost);
 };
-//const calculateSUM = (arr) => {
-//let sum = 0;
-// for (value of arr) {
-// sum += value;
-// }
-// return sum;
-//};
+const calculateSUM = (arr) => {
+let sum = 0;
+ for (value of arr) {
+ sum += value;
+ }
+ return sum;
+};
 
 function calculateAvg() {
   //let sumMPG = calculateSUM(MY_MPG);
