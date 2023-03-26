@@ -103,22 +103,23 @@ function renderTable() {
    FORM[0].value = MY_DATA[index].miles
    FORM[1].value = MY_DATA[index].gallons
    FORM[2].value = MY_DATA[index].price
-   MY_DATA.splice(index, 1)
+
+   delBtn.addEventListener('click', function(e){
+    MY_DATA.splice(index, 1)
+   })
    })
    td.appendChild(editBtn);
    td.appendChild(delBtn);
    return td;
   })
-  function deletebutton(e){
-    console.log('button element', e)
-    e.appendChild.remove()
-  }
+  
 }
 function renderTable() {
     TBL_OUTPUT.innerHTML = ''
-     const tbl = renderTableHeadings()
+if(MY_DATA.length !== 0){
+ } const tbl = renderTableHeadings()
      TBL_OUTPUT.appendChild(tbl)
-     MY_DATA.forEach(function(obj){
+     MY_DATA.forEach(function(obj, index){
         const tr = document.createElement('tr')
         for(key in obj){
             let td = document.createElement('td')
