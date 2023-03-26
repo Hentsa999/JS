@@ -100,13 +100,19 @@ function renderTable() {
    const delBtn = document.createElement('button');
    delBtn.textContent = 'delete';
    editBtn.addEventListener('click', function(e){
-   
-
+   FORM[0].value = MY_DATA[index].miles
+   FORM[1].value = MY_DATA[index].gallons
+   FORM[2].value = MY_DATA[index].price
+   MY_DATA.splice(index, 1)
    })
    td.appendChild(editBtn);
    td.appendChild(delBtn);
    return td;
   })
+  function deletebutton(e){
+    console.log('button element', e)
+    e.appendChild.remove()
+  }
 }
 function renderTable() {
     TBL_OUTPUT.innerHTML = ''
