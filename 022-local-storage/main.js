@@ -13,6 +13,11 @@ function getTripData(){
   }
 }
 
+function saveTripData(){
+  localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
+}
+
+
 const MY_DATA = getTripData()
 renderTable()
 
@@ -113,9 +118,12 @@ function renderTable() {
    FORM[0].value = MY_DATA[index].miles
    FORM[1].value = MY_DATA[index].gallons
    FORM[2].value = MY_DATA[index].price
+   MY_DATA.splice(index, 1)
 
    delBtn.addEventListener('click', function(e){
     MY_DATA.splice(index, 1)
+    saveTripData()
+    renderTable()
    })
    })
    td.appendChild(editBtn);
@@ -127,8 +135,9 @@ function renderTable() {
 function renderTable() {
     TBL_OUTPUT.innerHTML = ''
   if(MY_DATA.length !== 0){
- } const tbl = renderTableHeadings()
+  const tbl = renderTableHeadings()
      TBL_OUTPUT.appendChild(tbl)
+  }
      MY_DATA.forEach(function(obj, index){
         const tr = document.createElement('tr')
         for(key in obj){
@@ -152,6 +161,8 @@ FORM.addEventListener("submit", (e) => {
     AVG_OUTPUT.textContent = "";
     const DataObj = trackMPGandCost(miles, gallons, price);
     MY_DATA.push(dataObj);
+    localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
+    saveTripData()
     renderTable();
     calculateAvg();
   }
