@@ -2,10 +2,19 @@ const FORM = document.getElementById("form-input");
 const myArr = [];
 const AVG_OUTPUT = document.getElementById("output-avg");
 const TBL_OUTPUT = document.getElementById("table-out");
-const MY_DATA = document.getElementById('')
 
-const MY_MPG = [];
-const MY_TRIP_COST = [];
+function getTripData(){
+  const tripDataJSON = localStorage.getItem('tripdata')
+  //const tripDataJSON = localStorage.setItem('tripdata', JSON.stringify(MY_DATA)) 
+  if(tripDataJSON !== null){
+  return JSON.parse(tripDataJSON)
+  } else{
+    return []
+  }
+}
+
+const MY_DATA = getTripData()
+renderTable()
 
 const updateDOM = (input) => {
   const divEl = document.querySelector("#output");
@@ -59,12 +68,12 @@ if (price > 1000) {
   errMsg.push("really? I think this is in error... try again");
 }
 
-if (errMsg.length > 0) {
-  ERR.textContent = errMsg;
-  return false;
-} else {
-  return true;
-}
+//if (errMsg.length > 0) {
+  //ERR.textContent = errMsg;
+ // return false;
+//} else {
+//  return true;
+//}
 
 function renderTable() {
   const tbl = document.createElement("table");
@@ -117,7 +126,7 @@ function renderTable() {
 }
 function renderTable() {
     TBL_OUTPUT.innerHTML = ''
-if(MY_DATA.length !== 0){
+  if(MY_DATA.length !== 0){
  } const tbl = renderTableHeadings()
      TBL_OUTPUT.appendChild(tbl)
      MY_DATA.forEach(function(obj, index){
