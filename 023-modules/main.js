@@ -1,6 +1,6 @@
 import { renderTable } from "./render.js";
 import { getTripData, saveTripData } from "./Storage.js";
-
+import { isFormValid, calculateAvg, trackMPGandCost } from "./handleinput.js";
 const FORM = document.getElementById("form-input");
 const myArr = [];
 const AVG_OUTPUT = document.getElementById("output-avg");

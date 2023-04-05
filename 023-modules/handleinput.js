@@ -1,3 +1,5 @@
+const ERR = document.getElementById("err");
+
 const updateDOM = (input) => {
   const divEl = document.querySelector("#output");
   const p = document.createElement("p");
@@ -14,9 +16,6 @@ const trackMPGandCost = (miles, gallons, price = 3.79) => {
     tripCost: tripCost,
   };
   return obj;
-
-  MY_MPG.push(MPG);
-  MY_TRIP_COST.push(tripCost);
 };
 const calculateSUM = (arr) => {
   let sum = 0;
@@ -39,3 +38,16 @@ function calculateAvg() {
   updateDOM("Average MPG is ${avgMPG}");
   updateDOM("Average Trip is ${avgTripCost}");
 }
+function isFormValid(miles, gallons, price) {
+  const errMsg = [];
+}
+if (miles === 0 || gallons === 0 || price === 0) {
+  errMsg.push("Make sure your input value greater than 011, Try Again");
+}
+if (price > 1000) {
+  errMsg.push("really? I think this is in error... try again");
+} else {
+  return true;
+}
+
+export { isFormValid, calculateAvg, trackMPGandCost };
