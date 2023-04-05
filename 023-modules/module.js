@@ -1,13 +1,3 @@
-import { renderTable } from "./render.js";
-import { getTripData, saveTripData } from "./Storage.js";
-
-const FORM = document.getElementById("form-input");
-const myArr = [];
-const AVG_OUTPUT = document.getElementById("output-avg");
-
-const MY_DATA = getTripData();
-renderTable(MY_DATA);
-
 const updateDOM = (input) => {
   const divEl = document.querySelector("#output");
   const p = document.createElement("p");
@@ -49,20 +39,3 @@ function calculateAvg() {
   updateDOM("Average MPG is ${avgMPG}");
   updateDOM("Average Trip is ${avgTripCost}");
 }
-
-function isFormValid(miles, gallons, price) {
-  const errMsg = [];
-}
-if (miles === 0 || gallons === 0 || price === 0) {
-  errMsg.push("Make sure your input value greater than 011, Try Again");
-}
-if (price > 1000) {
-  errMsg.push("really? I think this is in error... try again");
-}
-
-//if (errMsg.length > 0) {
-//ERR.textContent = errMsg;
-// return false;
-//} else {
-//  return true;
-//}
