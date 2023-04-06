@@ -1,6 +1,8 @@
 function updateDOM(input, id) {
   const divEl = document.querySelector(id);
   const p = document.createElement("p");
+  const mondayworkout = (document.getElementById("workout").innerHTML =
+    mondayworkout);
   p.textContent = input;
   divEl.appendChild(p);
 }
@@ -16,3 +18,17 @@ if (monday === "chest and back") {
 } else {
   console.log("we will work chest and back on tuesday");
 }
+function workout(chest, back = fullworkout) {
+  return chest + back;
+}
+const mondayworkout = [
+  {
+    chest: "bench press, chestflys, dumbell press, pushups ",
+    machine: "smithmachine, flymachine, benches",
+  },
+  {
+    back: "latpulldown, deadlift, rows, pullups",
+    machine: "backmachine, smithmachine, rowmachine, pullupbar",
+  },
+];
+console.log(mondayworkout);
